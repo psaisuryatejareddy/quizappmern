@@ -12,7 +12,7 @@ export const registerUser = async (payload) => {
 export const loginUser = async (payload) => {
     try {
       // Making a POST request without a custom instance
-      const response = await axios.post('https://quizapplication-akd7.onrender.com/api/users/login', payload);
+      const response = await axios.post('/api/users/login', payload);
       return response.data;
     } catch (error) {
       // Handling errors
