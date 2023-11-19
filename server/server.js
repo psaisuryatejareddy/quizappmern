@@ -10,7 +10,13 @@ const examsRoute = require("./routes/examsRoute");
 const reportsRoute = require("./routes/reportsRoute");
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+}));
+
 
 app.use("/api/users", usersRoute);
 app.use("/api/exams", examsRoute);
