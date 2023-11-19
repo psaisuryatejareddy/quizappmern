@@ -1,4 +1,5 @@
 const { default: axiosInstance } = require(".");
+import axios from "axios";
 
 export const registerUser = async (payload) => {
     try {
@@ -11,7 +12,7 @@ export const registerUser = async (payload) => {
 
 export const loginUser = async (payload) => {
     try {
-        const response = await axiosInstance.post('https://quizapplication-akd7.onrender.com/api/users/login', payload);
+        const response = await axios.post('/api/users/login', payload);
         return response.data;
     } catch (error) {
         return error.response.data;
