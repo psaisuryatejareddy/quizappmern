@@ -11,14 +11,12 @@ export const registerUser = async (payload) => {
 
 export const loginUser = async (payload) => {
     try {
-      // Making a POST request without a custom instance
-      const response = await axios.post('/api/users/login', payload);
-      return response.data;
+        const response = await axiosInstance.post('/api/users/login', payload);
+        return response.data;
     } catch (error) {
-      // Handling errors
-      return error.response.data;
+        return error.response.data;
     }
-  };
+}
 
 export const getUserInfo = async () => {
     try {
